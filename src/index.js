@@ -1,10 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
+import SimpleCounter from './SimpleCounter';
 
 let num1 = 0;
 let num2 = 0;
@@ -13,34 +12,26 @@ let num4 = 0;
 let num5 = 0;
 let num6 = 0;
 
-
-
-
-
 setInterval(() => {
   
-
   num1++;
+  num2++;
+  num3++;
+  num4++;
+  num5++;
+  num6++;
 
   ReactDOM.render(
-    <React.StrictMode>
-      <App
-        num6={num6}
-        num5={num5}
-        num4={num4}
-        num3={num3}
-        num2={num2}
-        num1={num1}
-      />
-    </React.StrictMode>,
+    <SimpleCounter
+      num6={Math.floor(num6 / 100000)}
+      num5={Math.floor(num5 / 10000)}
+      num4={Math.floor(num4 / 1000)}
+      num3={Math.floor(num3 / 100)}
+      num2={Math.floor(num2 / 10)}
+      num1={Math.floor(num1 / 1)}
+    />,
     document.getElementById('root')
   );
-  
 }, 1000);
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
 
 
